@@ -13,7 +13,10 @@ uploaded_file = st.file_uploader("Sube una imagen médica (.nii.gz)", type=["nii
 
 if uploaded_file:
     st.success("Imagen cargada correctamente ✅")
-    img = nib.load(BytesIO(uploaded_file.read()))
+    with open("temp.nii.gz", "wb") as f:
+    f.write(uploaded_file.read())
+img = nib.load("temp.nii.gz")
+
     data = img.get_fdata()
     slice_idx = data.shape[2] // 2
     slice_data = data[:, :, slice_idx]
