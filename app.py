@@ -15,7 +15,9 @@ if uploaded_file:
     st.success("Imagen cargada correctamente ✅")
     with open("temp.nii.gz", "wb") as f:
     f.write(uploaded_file.read())
+
 img = nib.load("temp.nii.gz")
+
 
     data = img.get_fdata()
     slice_idx = data.shape[2] // 2
