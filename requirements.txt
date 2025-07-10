@@ -1,0 +1,6 @@
+streamlit
+nibabel
+matplotlib
+segmentation-models-pytorch
+torch
+torchvision
