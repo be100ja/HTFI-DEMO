@@ -19,6 +19,7 @@ if uploaded_file:
 img = nib.load("temp.nii.gz")
 
 
+
     data = img.get_fdata()
     slice_idx = data.shape[2] // 2
     slice_data = data[:, :, slice_idx]
